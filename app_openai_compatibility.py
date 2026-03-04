@@ -7308,8 +7308,8 @@ def page_diagram_change_update():
     inject_theme()
     ensure_dirs()
     page_title(
-        "Diagram Change Update (AI Multimodal)",
-        "Upload a baseline diagram + procedure, enter a change request, generate an updated diagram image and revised procedure.",
+        "Engineering Diagram Change Impact Analyzer",
+        "",
     )
 
     # ----------------------------
