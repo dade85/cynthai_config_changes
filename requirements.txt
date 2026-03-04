@@ -1,0 +1,25 @@
+streamlit
+pandas
+numpy
+plotly
+Pillow
+opencv-python-headless
+PyMuPDF
+pdfplumber
+python-docx
+reportlab
+requests
+openai
+scikit-learn
+scikit-image
+networkx
+pytesseract
+trimesh
+ifcopenshell
+streamlit-sortables
+
+# Optional / environment-specific extras you may also want:
+# freecad (installed separately on Windows; not typically installed via pip)
+# pyassimp   # can help trimesh with some mesh/STEP import workflows
+# openpyxl   # recommended for robust .xlsx reading
+# xlrd       # if legacy .xls support is needed
