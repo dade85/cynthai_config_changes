@@ -192,7 +192,7 @@ DEFAULT_MISTRAL_MODEL = "mistral-small-latest"
 
 import streamlit as st
 
-st.image("CynthAI_Logo.png")
+st.image("CynthAI_Logo.png", width = 100)
 # ----------------------------
 # Utilities
 # ----------------------------
