@@ -190,7 +190,16 @@ DEFAULT_MODEL = "gpt-4o-mini"  # if you have access; otherwise use a model avail
 MISTRAL_CHAT_URL = "https://api.mistral.ai/v1/chat/completions"
 DEFAULT_MISTRAL_MODEL = "mistral-small-latest"
 
+from pathlib import Path
+import streamlit as st
 
+BASE_DIR = Path(__file__).resolve().parent
+LOGO_PATH = BASE_DIR / "assets" / "logo.png"
+
+if LOGO_PATH.exists():
+    st.image(str(LOGO_PATH), width=180)
+else:
+    st.warning(f"Logo not found: {LOGO_PATH}")
 
 # ----------------------------
 # Utilities
@@ -1185,12 +1194,12 @@ def json_dumps_pretty(obj: Any) -> str:
     return json.dumps(obj, indent=2, ensure_ascii=False)
 
 
-def load_cynthai__bytes() -> Optional[bytes]:
-    """Load CynthAI  bytes from common locations; never raises."""
+def load_cynthai_logo_bytes() -> Optional[bytes]:
+    """Load CynthAI logo bytes from common locations; never raises."""
     candidates: List[str] = []
 
     # Environment override
-    envp = os.environ.get("CYNTHAI__PATH", "").strip()
+    envp = os.environ.get("CYNTHAI_LOGO_PATH", "").strip()
     if envp:
         candidates.append(envp)
 
@@ -1214,10 +1223,8 @@ def load_cynthai__bytes() -> Optional[bytes]:
             continue
     return None
 
+
 def page_title(title: str, subtitle: Optional[str] = None) -> None:
-  
-
-
     """Standard page header with optional logo aligned to the far right (all pages)."""
     logo = load_cynthai_logo_bytes()
     if logo:
