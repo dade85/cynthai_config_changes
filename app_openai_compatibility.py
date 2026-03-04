@@ -190,17 +190,9 @@ DEFAULT_MODEL = "gpt-4o-mini"  # if you have access; otherwise use a model avail
 MISTRAL_CHAT_URL = "https://api.mistral.ai/v1/chat/completions"
 DEFAULT_MISTRAL_MODEL = "mistral-small-latest"
 
-from pathlib import Path
 import streamlit as st
 
-BASE_DIR = Path(__file__).resolve().parent
-LOGO_PATH = BASE_DIR / "assets" / "CynthAI_Logo.png"
-
-if LOGO_PATH.exists():
-    st.image(str(LOGO_PATH), width=180)
-else:
-    st.warning(f"Logo not found: {LOGO_PATH}")
-
+st.image("CynthAI_Logo.png")
 # ----------------------------
 # Utilities
 # ----------------------------
