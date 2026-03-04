@@ -194,7 +194,7 @@ from pathlib import Path
 import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent
-LOGO_PATH = BASE_DIR / "assets" / "logo.png"
+LOGO_PATH = BASE_DIR / "assets" / "CynthAI_logo.png"
 
 if LOGO_PATH.exists():
     st.image(str(LOGO_PATH), width=180)
