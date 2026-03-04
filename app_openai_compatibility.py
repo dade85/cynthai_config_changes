@@ -1214,17 +1214,7 @@ def load_cynthai__bytes() -> Optional[bytes]:
             continue
     return None
 
-    # Common repo-relative locations
-    candidates.extend([
-        str(BASE_DIR / "cynthai_logo.png"),
-        str(BASE_DIR / "cynthai_logo.jpg"),
-        str(BASE_DIR / "CynthAI_Logo.png"),
-        str(BASE_DIR / "CynthAI_Logo.jpg"),
-        str(BASE_DIR / "assets" / "cynthai_logo.png"),
-        str(BASE_DIR / "assets" / "cynthai_logo.jpg"),
-        str(BASE_DIR / "assets" / "CynthAI_Logo.png"),
-        str(BASE_DIR / "assets" / "CynthAI_Logo.jpg"),
-    ])
+
 
 def page_title(title: str, subtitle: Optional[str] = None) -> None:
     """Standard page header with optional logo aligned to the far right (all pages)."""
