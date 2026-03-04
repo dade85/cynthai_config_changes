@@ -1185,12 +1185,12 @@ def json_dumps_pretty(obj: Any) -> str:
     return json.dumps(obj, indent=2, ensure_ascii=False)
 
 
-def load_cynthai_logo_bytes() -> Optional[bytes]:
-    """Load CynthAI logo bytes from common locations; never raises."""
+def load_cynthai__bytes() -> Optional[bytes]:
+    """Load CynthAI  bytes from common locations; never raises."""
     candidates: List[str] = []
 
     # Environment override
-    envp = os.environ.get("CYNTHAI_LOGO_PATH", "").strip()
+    envp = os.environ.get("CYNTHAI__PATH", "").strip()
     if envp:
         candidates.append(envp)
 
@@ -1214,6 +1214,17 @@ def load_cynthai_logo_bytes() -> Optional[bytes]:
             continue
     return None
 
+    # Common repo-relative locations
+    candidates.extend([
+        str(BASE_DIR / "cynthai_logo.png"),
+        str(BASE_DIR / "cynthai_logo.jpg"),
+        str(BASE_DIR / "CynthAI_Logo.png"),
+        str(BASE_DIR / "CynthAI_Logo.jpg"),
+        str(BASE_DIR / "assets" / "cynthai_logo.png"),
+        str(BASE_DIR / "assets" / "cynthai_logo.jpg"),
+        str(BASE_DIR / "assets" / "CynthAI_Logo.png"),
+        str(BASE_DIR / "assets" / "CynthAI_Logo.jpg"),
+    ])
 
 def page_title(title: str, subtitle: Optional[str] = None) -> None:
     """Standard page header with optional logo aligned to the far right (all pages)."""
