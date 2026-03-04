@@ -1215,6 +1215,9 @@ def load_cynthai__bytes() -> Optional[bytes]:
     return None
 
 def page_title(title: str, subtitle: Optional[str] = None) -> None:
+  
+
+
     """Standard page header with optional logo aligned to the far right (all pages)."""
     logo = load_cynthai_logo_bytes()
     if logo:
